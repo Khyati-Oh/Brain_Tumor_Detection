@@ -4,12 +4,14 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 import os
+import zipfile
 
 # Initialize Flask app
 app = Flask(__name__)
 
 # Load the trained model
-model = tf.keras.models.load_model(".\models\model1.keras")
+model_path = os.path.join("models","model1.keras")
+model = tf.keras.models.load_model(model_path)
 
 # Class labels
 class_labels = ['pituitary', 'glioma', 'notumor', 'meningioma']
