@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 
 # Load the trained model
-model = tf.keras.models.load_model(r"C:\Users\Khyati\OneDrive\Desktop\Flask\Brain_Tumor_Detection\models\model1.keras")
+model = tf.keras.models.load_model(".\models\model1.keras")
 
 # Class labels
 class_labels = ['pituitary', 'glioma', 'notumor', 'meningioma']
