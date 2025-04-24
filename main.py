@@ -4,7 +4,6 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 import os
-import zipfile
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -75,4 +74,5 @@ def get_uploaded_file(filename):
 
 # Run Flask App
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT',5000))
+    app.run(host='0.0.0.0',port=port)
